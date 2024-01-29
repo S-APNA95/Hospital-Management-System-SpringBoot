@@ -10,19 +10,25 @@ public class Patient {
     String address;
     String disease;
     Long contactNo;
-    UUID doctorId;
+    UUID docId;
+    UUID hospitalId;
     List<Doctor> doctors;
     String emailId;
+    Boolean isAdmit;
+    UUID bedId;
 
-    public Patient(UUID patientId, String name, String address, String disease, Long contactNo, UUID doctorId, List<Doctor> doctors, String emailId) {
+    public Patient(UUID patientId, String name, String address, String disease, Long contactNo, UUID docId,UUID hospitalId, List<Doctor> doctors, String emailId, UUID bedId) {
         this.patientId = patientId;
         this.name = name;
         this.address = address;
         this.disease = disease;
         this.contactNo = contactNo;
-        this.doctorId = doctorId;
+        this.docId = docId;
+        this.hospitalId = hospitalId;
         this.doctors = new ArrayList<>();
         this.emailId = emailId;
+        this.isAdmit = true;
+        this.bedId = bedId;
     }
 
     public UUID getPatientId() {
@@ -65,12 +71,20 @@ public class Patient {
         this.contactNo = contactNo;
     }
 
-    public UUID getDoctorId() {
-        return doctorId;
+    public UUID getDocId() {
+        return docId;
     }
 
-    public void setDoctorId(UUID doctorId) {
-        this.doctorId = doctorId;
+    public UUID getHospitalId() {
+        return hospitalId;
+    }
+
+    public void setHospitalId(UUID hospitalId) {
+        this.hospitalId = hospitalId;
+    }
+
+    public void setDocId(UUID doctorId) {
+        this.docId = docId;
     }
 
     public List<Doctor> getDoctors() {
@@ -88,4 +102,25 @@ public class Patient {
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
-}
+
+    public Boolean getAdmit() {
+        return isAdmit;
+    }
+    public UUID getBedId() {
+        return bedId;
+    }
+
+    public void setBedId(UUID bedId) {
+        this.bedId = bedId;
+    }
+
+    public void setAdmit(Boolean admit) {
+        isAdmit = admit;
+
+    }
+
+
+
+
+    }
+

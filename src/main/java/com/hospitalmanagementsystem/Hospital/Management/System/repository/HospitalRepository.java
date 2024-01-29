@@ -12,12 +12,13 @@ import java.util.UUID;
 public class HospitalRepository {
     //ID VS HOSPITAL OBJECTS
     // all the hospital related database will be performed here
-
     HashMap<UUID, Hospital> hospitalDB;
-
+    // Constructor to initialize the repository
     public HospitalRepository() {
         this.hospitalDB = new HashMap<>();
     }
+
+    // Retrieve all hospitals in the system
     public List<Hospital> getAllHospital(){
         List<Hospital> hospitals = new ArrayList<>();
         for(UUID id : hospitalDB.keySet()){
@@ -27,9 +28,13 @@ public class HospitalRepository {
         return hospitals;
     }
 
+    // Register a new hospital
     public void registerHospital(Hospital h){
         UUID id = h.getHospitalId();
         hospitalDB.put(id, h);
+    }
+    public Hospital getHospitalById(UUID id){
+        return hospitalDB.get(id);
     }
 
 

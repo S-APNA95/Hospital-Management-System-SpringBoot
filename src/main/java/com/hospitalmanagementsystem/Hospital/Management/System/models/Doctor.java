@@ -58,4 +58,8 @@ public class Doctor {
     public void setHospitalId(UUID hospitalId) {
         this.hospitalId = hospitalId;
     }
+
+    public UUID getDoctorId() {
+        return docId;
+    }
 }
