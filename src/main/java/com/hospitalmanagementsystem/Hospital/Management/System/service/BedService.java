@@ -16,7 +16,7 @@ public class BedService {
         List<Bed>beds = bedRepository.getAllBeds();
 
         for(Bed obj :beds){
-            if(!obj.isBooked() && obj.getHospitalId() == hospitalId){
+            if(!obj.isBooked() && obj.getHospitalId().toString().equals(hospitalId.toString())){
                 return obj;
             }
         }

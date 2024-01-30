@@ -42,4 +42,8 @@ public class PatientService {
         patientRepository.registerPatient(obj);
 
     }
+    public Patient getPatientById(UUID pid){
+        return patientRepository.getPatientById(pid);
+    }
+
 }
